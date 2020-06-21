@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.Numerics;
+using System.Runtime.CompilerServices;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +8,7 @@ using UnityEngine;
 public class Ballon : MonoBehaviour
 {
 
-    [SerializeField] Vector3 Fuerza;
+    [SerializeField] UnityEngine.Vector3 Fuerza;
     [SerializeField] Sprite[] ballonSprites;
 
     private Rigidbody2D rb;
@@ -14,13 +16,15 @@ public class Ballon : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    { 
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         spriteRenderer.sprite = ballonSprites[UnityEngine.Random.Range(0,4)];
 
-        Fuerza = new Vector3(UnityEngine.Random.Range(-100,100),UnityEngine.Random.Range(150,250));
+        transform.position = new UnityEngine.Vector3(UnityEngine.Random.Range(-9f,11.48f), transform.position.y,transform.position.z);
+
+        Fuerza = new UnityEngine.Vector3(UnityEngine.Random.Range(-100,100),UnityEngine.Random.Range(150,250));
         rb.AddForce(Fuerza);
     }
 
@@ -29,4 +33,17 @@ public class Ballon : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        
+        if(other.gameObject.tag=="Pared0"){
+
+            Destroy(this.gameObject);
+
+        };
+
+    }
+
+
+
 }
