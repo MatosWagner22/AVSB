@@ -16,9 +16,11 @@ public class Ballon : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        spriteRenderer.sprite = ballonSprites[UnityEngine.Random.Range(0,4)];
 
         Fuerza = new Vector3(UnityEngine.Random.Range(-100,100),UnityEngine.Random.Range(150,250));
-
         rb.AddForce(Fuerza);
     }
 
