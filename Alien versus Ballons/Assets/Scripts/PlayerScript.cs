@@ -2,43 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class Boundary
+{
+    public float yMinimo, yMaximo;
+}
 public class PlayerScript : MonoBehaviour
 {
     public float speed;
-    private void Awake()
-    {
-        Debug.Log("Awake");
-    }
-
-    private void OnEnable()
-    {
-        Debug.Log("Awake2");
-
-    }
-
+    public Boundary boundary;
+    float xPositionStart = 4.5f;
+    
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Awake3");
-
+        transform.position = new Vector3(4.5f,0.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(transform.position.x, Input.GetAxis("Vertical") * speed * Time.deltaTime, transform.position.z);
-    }
 
-    private void OnDisable()
-    {
-        Debug.Log("Awake4");
-
-    }
-
-    private void OnDestroy()
-    {
-        Debug.Log("Awake5");
-
+        float yPosition = Mathf.Clamp(transform.position.y, boundary.yMinimo , boundary.yMaximo);
+        transform.position = new Vector3(0.0f, yPosition);
     }
 
 }
