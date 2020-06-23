@@ -16,7 +16,6 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(4.5f,0.0f);
     }
 
     // Update is called once per frame

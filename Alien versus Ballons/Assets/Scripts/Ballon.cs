@@ -22,7 +22,7 @@ public class Ballon : MonoBehaviour
 
         spriteRenderer.sprite = ballonSprites[UnityEngine.Random.Range(0,4)];
 
-        transform.position = new UnityEngine.Vector3(UnityEngine.Random.Range(-9f,11.48f), transform.position.y,transform.position.z);
+        transform.position = new UnityEngine.Vector3(UnityEngine.Random.Range(-0.301f, 0.451f), transform.position.y,transform.position.z);
 
         Fuerza = new UnityEngine.Vector3(UnityEngine.Random.Range(-100,100),UnityEngine.Random.Range(150,250));
         rb.AddForce(Fuerza);
