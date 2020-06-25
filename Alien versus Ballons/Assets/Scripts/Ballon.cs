@@ -40,6 +40,10 @@ public class Ballon : MonoBehaviour
 
             Destroy(this.gameObject);
 
+        }else if(other.gameObject.tag=="Laser")
+        {
+            Destroy(this.gameObject);
+            Destroy(other.gameObject);
         };
 
     }

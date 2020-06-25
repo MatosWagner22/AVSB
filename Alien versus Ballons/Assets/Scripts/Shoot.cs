@@ -26,6 +26,8 @@ public class Shoot : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddRelativeForce(bulletForce);
+
+        Destroy(bullet, 0.7f);
     }
 
 }
