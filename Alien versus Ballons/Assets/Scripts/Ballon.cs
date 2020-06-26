@@ -10,6 +10,7 @@ public class Ballon : MonoBehaviour
 
     [SerializeField] UnityEngine.Vector3 Fuerza;
     [SerializeField] Sprite[] ballonSprites;
+    [SerializeField] SoundManager sound;
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -42,6 +43,7 @@ public class Ballon : MonoBehaviour
 
         }else if(other.gameObject.tag=="Laser")
         {
+            sound.PlaySound();
             Destroy(this.gameObject);
             Destroy(other.gameObject);
         };

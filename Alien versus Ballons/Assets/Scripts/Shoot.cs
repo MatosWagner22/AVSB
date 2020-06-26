@@ -7,6 +7,7 @@ public class Shoot : MonoBehaviour
 {
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] UnityEngine.Vector3 bulletForce;
+    [SerializeField] SoundManager sound;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,8 @@ public class Shoot : MonoBehaviour
 
     void Shooter()
     {
+        sound.PlaySound();
+
         GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddRelativeForce(bulletForce);
 
