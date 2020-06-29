@@ -139,4 +139,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5a3c40fad5afde24dbecec9db814258f, type: 3}
   - {fileID: 21300000, guid: 2b061fbe75f94014d839440739e6146b, type: 3}
   - {fileID: 21300000, guid: ea1604b6082bf8441bd641add9dbfd4c, type: 3}
-  sound: {fileID: 0}
+  Manager: {fileID: 0}

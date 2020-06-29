@@ -10,6 +10,7 @@ public class Ballon : MonoBehaviour
 
     [SerializeField] UnityEngine.Vector3 Fuerza;
     [SerializeField] Sprite[] ballonSprites;
+    [SerializeField] UIManager Manager;
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -17,6 +18,8 @@ public class Ballon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     { 
+        Manager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
+
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -42,6 +45,7 @@ public class Ballon : MonoBehaviour
 
         }else if(other.gameObject.tag=="Laser")
         {
+            Manager.AddScore();
             Destroy(this.gameObject);
             Destroy(other.gameObject);
         };
