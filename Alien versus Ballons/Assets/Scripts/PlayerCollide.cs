@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCollide : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class PlayerCollide : MonoBehaviour
         if(other.gameObject.tag=="LimiteP")
         {
             Destroy(this.gameObject);
+            SceneManager.LoadScene("Final");
         }    
     }
 
