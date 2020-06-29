@@ -2085,7 +2085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1eed881f78eb344888b3c288921b27f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballonPreFab: {fileID: 100024290476178462, guid: f245d3f5bf795e94daad11928df1b3d7,
+  ballonPreFab: {fileID: 100024290476178462, guid: 4beff673c55abee49a44c65c855b9dec,
     type: 3}
 --- !u!1 &2011861595
 GameObject:
