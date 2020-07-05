@@ -11,6 +11,8 @@ public class Ballon : MonoBehaviour
     [SerializeField] UnityEngine.Vector3 Fuerza;
     [SerializeField] Sprite[] ballonSprites;
     [SerializeField] UIManager Manager;
+    private Helio helio;
+    private int s = 1;
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -45,13 +47,10 @@ public class Ballon : MonoBehaviour
 
         }else if(other.gameObject.tag=="Laser")
         {
-            Manager.AddScore();
+            helio.SumarHelio(1);
+            Manager.AddScore(1);
             Destroy(this.gameObject);
             Destroy(other.gameObject);
-        };
-
+        }
     }
-
-
-
 }

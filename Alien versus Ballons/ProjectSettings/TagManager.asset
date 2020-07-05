@@ -8,6 +8,7 @@ TagManager:
   - LimiteP
   - Laser
   - UIManager
+  - Slider
   layers:
   - Default
   - TransparentFX

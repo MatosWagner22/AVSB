@@ -10,9 +10,9 @@ public class UIManager : MonoBehaviour
     int objetivo = 20;
     [SerializeField] TextMeshProUGUI scoreText;
 
-    public void AddScore()
+    public void AddScore(int s)
     {
-        score++;
+        score+=s;
         scoreText.text = score.ToString();
     }
 
