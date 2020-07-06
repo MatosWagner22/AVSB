@@ -12,6 +12,7 @@ public class Boundary
 
 public class Player : MonoBehaviour
 {
+    public float speed;
     public Boundary boundary;
     float xPositionStart = 4.5f;
     

@@ -47,8 +47,7 @@ public class Ballon : MonoBehaviour
 
         }else if(other.gameObject.tag=="Laser")
         {
-            helio.SumarHelio(1);
-            Manager.AddScore(1);
+            Manager.AddScore(s);
             Destroy(this.gameObject);
             Destroy(other.gameObject);
         }

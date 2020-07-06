@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 public class Helio : MonoBehaviour
 {
     [SerializeField] int helioInicial = 100;
-    [SerializeField] float helioActual; 
+    [SerializeField] int helioActual; 
     [SerializeField] Slider barraSlider;
 
 // Start is called before the first frame update
@@ -32,7 +32,7 @@ public class Helio : MonoBehaviour
     
     public void TomarDamage()
     {
-        helioActual -= 0.5;
+        helioActual -= 1;
         barraSlider.value = helioActual;
         if (helioActual <= 0){
             Destroy(this.gameObject);
