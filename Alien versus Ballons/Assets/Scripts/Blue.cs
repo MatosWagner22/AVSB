@@ -1,13 +1,9 @@
-﻿using System.Numerics;
-using System.Runtime.CompilerServices;
-using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ballon : MonoBehaviour
+public class Blue : MonoBehaviour
 {
-
     [SerializeField] UnityEngine.Vector3 Fuerza;
     [SerializeField] Sprite[] ballonSprites;
     [SerializeField] UIManager Manager;
@@ -21,11 +17,11 @@ public class Ballon : MonoBehaviour
     { 
         Manager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
         sound = GameObject.FindGameObjectWithTag("Pop").GetComponent<SoundManager>();
-
+        
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        spriteRenderer.sprite = ballonSprites[UnityEngine.Random.Range(0,3)];
+        spriteRenderer.sprite = ballonSprites[UnityEngine.Random.Range(0,1)];
 
         transform.position = new UnityEngine.Vector3(UnityEngine.Random.Range(-0.301f, 0.451f), transform.position.y,transform.position.z);
 
@@ -50,7 +46,7 @@ public class Ballon : MonoBehaviour
             sound.PlaySound();
             Destroy(this.gameObject,0.1f);
             Destroy(other.gameObject);
-            Manager.AddScore(1);
+            Manager.AddScore(10);
         }
     }
 }

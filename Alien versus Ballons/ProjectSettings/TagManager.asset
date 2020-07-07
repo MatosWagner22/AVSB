@@ -9,6 +9,7 @@ TagManager:
   - Laser
   - UIManager
   - Slider
+  - Pop
   layers:
   - Default
   - TransparentFX

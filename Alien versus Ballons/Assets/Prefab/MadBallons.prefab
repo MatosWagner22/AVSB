@@ -135,8 +135,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fuerza: {x: 0, y: 0, z: 0}
   ballonSprites:
-  - {fileID: 21300000, guid: 852757330d4a3ae408f61f6260076862, type: 3}
+  - {fileID: 21300000, guid: c0d9b3f23a485d34dbe2442823717f59, type: 3}
   - {fileID: 21300000, guid: 4f4a5213543dc7b4d91d2b228edf3a40, type: 3}
   - {fileID: 21300000, guid: b81615fac2a812f4ea257c8f54d553e3, type: 3}
-  - {fileID: 21300000, guid: c0d9b3f23a485d34dbe2442823717f59, type: 3}
   Manager: {fileID: 0}
+  sound: {fileID: 0}
