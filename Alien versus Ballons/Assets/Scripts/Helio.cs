@@ -9,8 +9,9 @@ using UnityEngine.SceneManagement;
 
 public class Helio : MonoBehaviour
 {
-    int helioInicial = 100;
-    int helioActual; 
+    float helioInicial = 100;
+    float helioActual; 
+    float maxTime = 200f; 
     [SerializeField] Slider barraSlider;
 
     // Start is called before the first frame update
@@ -21,7 +22,7 @@ public class Helio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        TomarDamage();
     }
 
     private void Awake()
@@ -29,10 +30,10 @@ public class Helio : MonoBehaviour
         helioActual = helioInicial;
     }
     
-    public void TomarDamage(int h)
+    public void TomarDamage()
     {
-        helioActual -= h;
-        barraSlider.value = helioActual;
+        helioActual -= Time.deltaTime;
+        barraSlider.value = (helioActual/maxTime);
         if (helioActual <= 0){
             Destroy(this.gameObject);
             SceneManager.LoadScene("Final");
@@ -41,7 +42,7 @@ public class Helio : MonoBehaviour
 
     public void SumarHelio(int h)
     {
-        helioActual += h;
+        helioActual += (h/2);
         barraSlider.value = helioActual;
     }
 }
