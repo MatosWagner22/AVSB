@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
-    
+
     bool activo;
     Canvas canvas;
 
@@ -21,15 +21,17 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P)){
+        if (Input.GetKeyDown(KeyCode.P))
+        {
             Pausar();
             activo = !activo;
             canvas.enabled = activo;
         }
     }
-    
-    public void Pausar(){
-        if(Time.timeScale == 1)
+
+    public void Pausar()
+    {
+        if (Time.timeScale == 1)
         {
             Time.timeScale = 0;
         }
@@ -39,7 +41,8 @@ public class Pause : MonoBehaviour
         }
     }
 
-    public void Salir(){
+    public void Salir()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
