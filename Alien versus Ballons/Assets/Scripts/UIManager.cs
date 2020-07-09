@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
     {
         if(score >= objetivo)
         {
-            SceneManager.LoadScene("Final");
+            SceneManager.LoadScene("Win");
         }
 
         TomarDamage();
